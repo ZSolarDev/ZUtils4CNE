@@ -1,4 +1,4 @@
-package megamod.cache;
+package zutils.cache;
 
 /**
  * The manifest of assets. Used to cache assets via the Cacher.

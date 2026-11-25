@@ -1,4 +1,4 @@
-package megamod.cache;
+package zutils.cache;
 
 /**
  * The type of asset this is.

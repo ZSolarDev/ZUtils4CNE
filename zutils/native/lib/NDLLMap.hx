@@ -1,4 +1,4 @@
-package megamod.native.lib;
+package zutils.native.lib;
 
 /**
  * A map of function names to indexes.

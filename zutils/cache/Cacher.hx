@@ -1,4 +1,4 @@
-package megamod.cache;
+package zutils.cache;
 
 import funkin.backend.system.Logs;
 import funkin.backend.utils.NativeAPI.ConsoleColor;

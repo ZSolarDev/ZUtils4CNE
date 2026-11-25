@@ -1,4 +1,4 @@
-package megamod.native;
+package zutils.native;
 
 import funkin.backend.system.Logs;
 import funkin.backend.utils.NativeAPI.ConsoleColor;
@@ -75,7 +75,7 @@ class Native {
             var pair = __ndllMap[pairIdx];
             if (pair.ndllID == ndllID) {
                 // Replace it with a no-op to prevent __ndllMap indexes from being invalidated.
-                __nativeBank[pair.idx] = {call: noop(), ndllID: ''};
+                __nativeBank[pair.idx] = {call: noop, ndllID: ''};
                 toSplice.push(pairIdx);
                 removedAny = true;
             }
@@ -102,7 +102,7 @@ class Native {
         if (idx == -1)
             return {
                 call: noop,
-                ndllID: '?' 
+                ndllID: '' 
             };
         return __nativeBank[idx];
     }
@@ -126,7 +126,7 @@ class Native {
      * I would use NdllUtil.noop, but it's private, and I felt
      * like @:privateAccess wouldn't be needed if I just made this instead.
      */
-    static function noop() {}
+    private static function noop() {}
 
     /**
      * Calls an NDLL function with no arguments.
@@ -134,10 +134,10 @@ class Native {
      * error when calling an NDLL function with no arguments.
      * 
      * I still don't know why this fixes it.
+     * 
      * @param func - The function to call.
      * @return `Dynamic` - The return value of the function, if any.
      */
-    public static function callNoArg(func:Dynamic):Dynamic {
+    public static function callNoArg(func:Dynamic):Dynamic
         return Reflect.callMethod(null, func, []);
-    }
 }

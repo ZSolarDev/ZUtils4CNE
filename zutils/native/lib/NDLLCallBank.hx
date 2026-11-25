@@ -1,4 +1,4 @@
-package megamod.native.lib;
+package zutils.native.lib;
 
 /**
  * The bank of calls for an NDLL.

@@ -1,4 +1,4 @@
-package megamod.cache;
+package zutils.cache;
 
 /**
  * The result of a full cache operation.
